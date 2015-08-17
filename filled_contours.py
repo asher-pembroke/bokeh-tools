@@ -140,7 +140,7 @@ def filled_contours(p,cn,simplify_threshold = .01):
 def main(argv):
 	fig = plt.figure()
 	ax = fig.add_subplot(121)
-	N = 100
+	N = 200
 
 	x = np.linspace(0, 10, N)
 	y = np.linspace(0, 10, N)
@@ -154,11 +154,19 @@ def main(argv):
 	ax2.xlim = [0,10]
 	ax2.ylim = [0,10]
 
+	html_size_without_plots = 1638397 # bytes
+	html_size_with_p0_only = 1901692 # bytes
+	html_size_with_p1_only = 2463969 # bytes 
+
 	output_file('filled_contours.html', title='filled contours')
 	p0 = figure(x_range=[0, 10], y_range=[0, 10])
-	
-	filled_contours(p0, cn,.01)
-	show(p0)
+	filled_contours(p0, cn,.02)
+	p0.title = str((html_size_with_p0_only-html_size_without_plots)/1000.) + ' Kb'
+
+	p1 = figure(x_range=[0, 10], y_range=[0, 10])
+	p1.image(image = [d], x=[0], y=[0], dw=10, dh=10, palette="Spectral11")
+	p1.title = str((html_size_with_p1_only-html_size_without_plots)/1000.) + ' Kb'
+	show(hplot(p0, p1))
 
 if __name__ == '__main__':
 	import sys
