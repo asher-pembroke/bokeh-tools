@@ -4,14 +4,14 @@ Scientific plotting in bokeh-python
 
 ### Requirements
 
-  numpy
+*  numpy
   
-  scipy
+*  scipy
   
-  matplotlib
+*  matplotlib
   
-  webcolors
+*  webcolors
   
-  bokeh
+*  bokeh
   
-  networkx
+*  networkx
