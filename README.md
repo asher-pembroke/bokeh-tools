@@ -5,8 +5,8 @@ This is a collection of functions I'm developing to do scientific plotting in th
 Bokeh has many great features interactive 2D plots, particularly for lines and glyphs. However, it doesn't do shading or filled contouring, though they promise these features will come eventually. One option is to create rastered images of your data, but this takes a lot more bandwidth and slows down plots on the user end. I've developed a workaround that creates filled contour plots and renders them as a set of polygons, based on matplotlib's contourf function.
 
 Bokeh's image function with defaults (left) and contoured version with defaults (right):
-<img src="https://github.com/asher-pembroke/bokeh-tools/blob/master/rastered.png" width="400">
-<img src="https://github.com/asher-pembroke/bokeh-tools/blob/master/contoured.png" width="400">
+<img src="https://github.com/asher-pembroke/bokeh-tools/blob/master/rastered.png" width="350">
+<img src="https://github.com/asher-pembroke/bokeh-tools/blob/master/contoured.png" width="350">
 
 
 ## Requirements
