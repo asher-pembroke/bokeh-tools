@@ -105,8 +105,18 @@ def merge_islands(islands, polygons):
 	
 	return poly_graph
 
-
 def filled_contours(p,cn,simplify_threshold = .01):
+	"""Creates a bokeh plot of filled contours
+
+    Args:
+    	p (bokeh.plotting.Figure): Bokeh plot instance
+        cn (contours): Contours generated from plt.contourf()
+        simplify_threshold (Optional[float]): Resolution of the output contours in screenspace. Defaults to .01
+
+    Returns:
+        None
+
+    """
 	for cc in cn.collections:
 		face_color = np.array(cc.get_facecolor()[0])
 		color = rgb_to_hex(tuple((255*face_color[:-1]).round().astype(int)))
@@ -146,6 +156,7 @@ def main(argv):
 
 	output_file('filled_contours.html', title='filled contours')
 	p0 = figure(x_range=[0, 10], y_range=[0, 10])
+	
 	filled_contours(p0, cn,.01)
 	show(p0)
 
