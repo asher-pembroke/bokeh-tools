@@ -134,7 +134,7 @@ def filled_contours(p,cn,simplify_threshold = .01):
 				poly_graph = merge_islands(islands,polygons)
 				merged_path = get_merged_path(poly_graph)
 
-				p.patch(vertices[merged_path][:,0],vertices[merged_path][:,1], line_alpha = alpha, line_color = color, fill_alpha = alpha, fill_color = color)
+				p.patch(vertices[merged_path][:,0],vertices[merged_path][:,1], line_alpha = 0, line_color = color, fill_alpha = alpha, fill_color = color)
 
 
 def main(argv):
